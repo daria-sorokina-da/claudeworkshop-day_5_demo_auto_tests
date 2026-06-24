@@ -88,12 +88,31 @@ derived from what is actually in the test suite.
 **If it already exists:** update only the Coverage table/section to match the
 current state of the test suite. Do not reformat or rewrite other sections.
 
-### 5 — Verify and report
+### 5 — Commit the doc changes
 
-After editing, briefly report to the user:
+Stage and commit **only** the doc files that were actually modified. Do not
+stage any other files.
+
+```bash
+git add CLAUDE.md tests/CLAUDE.md README.md
+git diff --cached --quiet || git commit -m "$(cat <<'EOF'
+docs: update CLAUDE.md and README to reflect current branch coverage
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+EOF
+)"
+```
+
+If `git diff --cached --quiet` exits 0 (nothing staged), skip the commit and
+note it in the report.
+
+### 6 — Verify and report
+
+After editing and committing, briefly report to the user:
 - Which files were changed
 - What bullets moved from "Not covered" to "Covered" (or were added)
 - Whether README.md was created or updated
+- Whether a commit was created (or skipped because nothing changed)
 
 Do NOT make stylistic changes to content the branch did not touch. Minimal diff
 is the goal.

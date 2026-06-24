@@ -23,12 +23,12 @@ Style pills (elegant / wild / mythical / celtic / nature) and gender pills (male
 - Quirk: invalid style/gender silently falls back to nature/neutral — returns 200, not 400
 - Page object: `Pages/NameGeneratorPage.cs` | Tests: `Tests/NameGeneratorTests.cs`
 
-**Covered:** nothing yet — no page object or tests exist.
-
-**Not covered:**
+**Covered:**
 - Generate with valid style + gender → 5 cards returned, button re-enables (`QA-2730`)
 - Copy button on first card flips to "✓" confirmed state
 - Re-generate with same selections → 5 cards again
+
+**Not covered:**
 - All style/gender combinations (only elegant/female tested)
 - Silent fallback behavior when invalid style or gender is passed
 - Default state on page load (no style/gender pre-selected)

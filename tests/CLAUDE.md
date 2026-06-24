@@ -17,7 +17,9 @@ dotnet test --filter "FullyQualifiedName~NameGeneratorTests.GenerateNames_Elegan
 HorseWorld.Tests/
   Base/BaseTest.cs          # Driver setup/teardown; all fixtures inherit this
   Pages/                    # Page Object Model — all locators live here
+    NameGeneratorPage.cs    # Name Generator page object
   Tests/                    # Test fixtures — no locators, only page object calls
+    NameGeneratorTests.cs   # Generate names, copy button, re-generate (QA-2730)
 HorseWorld.Tests.slnx       # Solution file
 ```
 
