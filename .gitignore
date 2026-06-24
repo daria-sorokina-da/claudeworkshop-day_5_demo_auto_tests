@@ -3,3 +3,18 @@
 
 # Zephyr skill credentials — never commit
 .claude/skills/zephyr/.env
+
+# .NET build artifacts
+bin/
+obj/
+
+# NuGet packages (restored on build)
+*.user
+*.suo
+.vs/
+
+# Test result files
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
