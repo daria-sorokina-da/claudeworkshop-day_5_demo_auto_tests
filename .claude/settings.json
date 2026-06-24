@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Write(**/CLAUDE.md)",
-      "Write(README.md)"
+      "Write(README.md)",
+      "Edit(**/CLAUDE.md)",
+      "Edit(README.md)"
     ]
   },
   "hooks": {
