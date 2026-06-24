@@ -1,0 +1,5 @@
+# Scratch space — plans, notes, PR drafts (not committed)
+.temp/
+
+# Zephyr skill credentials — never commit
+.claude/skills/zephyr/.env
