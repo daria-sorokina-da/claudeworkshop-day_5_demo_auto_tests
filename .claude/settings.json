@@ -1,4 +1,10 @@
 {
+  "permissions": {
+    "allow": [
+      "Write(**/CLAUDE.md)",
+      "Write(README.md)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {
