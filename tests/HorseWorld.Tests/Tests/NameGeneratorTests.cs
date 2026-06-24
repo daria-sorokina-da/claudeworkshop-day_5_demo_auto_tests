@@ -71,9 +71,10 @@ public class NameGeneratorTests : BaseTest
         page.ClickGenerate();
         page.WaitForResults();
 
-        // Step 7 — generate again; view should update without error
+        // Step 7 — generate again; wait for the button to go disabled then re-enable,
+        // proving the second request completed rather than relying on stale cards.
         page.ClickGenerate();
-        page.WaitForResults();
+        page.WaitForButtonDisabled();
         page.WaitForButtonEnabled();
         Assert.That(page.NameCardCount(), Is.EqualTo(5), "Expected exactly 5 name cards after re-generation");
         Assert.That(page.IsGenerateButtonEnabled(), Is.True, "Generate button should be enabled after re-generation");

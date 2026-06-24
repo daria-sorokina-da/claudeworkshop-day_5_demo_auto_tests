@@ -5,7 +5,7 @@ namespace HorseWorld.Tests.Pages;
 
 public class NameGeneratorPage
 {
-    private const string Url = "http://localhost:3737/names";
+    private const string Url = "http://localhost:3737/name-generator";
 
     private readonly IWebDriver _driver;
     private readonly WebDriverWait _wait;
@@ -47,6 +47,9 @@ public class NameGeneratorPage
 
     public void WaitForResults()
         => _wait.Until(d => d.FindElements(By.CssSelector(".name-card")).Count == 5);
+
+    public void WaitForButtonDisabled()
+        => _wait.Until(d => !d.FindElement(By.CssSelector(".gen-btn")).Enabled);
 
     public void WaitForButtonEnabled()
         => _wait.Until(d => d.FindElement(By.CssSelector(".gen-btn")).Enabled);

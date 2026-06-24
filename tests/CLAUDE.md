@@ -26,7 +26,7 @@ HorseWorld.Tests.slnx       # Solution file
 ## Key Patterns
 
 - **Page Object Model** — locators belong in `Pages/`, never in `Tests/`.
-- **Explicit waits only** — use `WebDriverWait` + `ExpectedConditions`. No `Thread.Sleep` except inside `Pause()` for debug delays.
+- **Explicit waits only** — use `WebDriverWait` with lambda conditions (e.g. `_wait.Until(d => ...)`). No `Thread.Sleep` except inside `Pause()` for debug delays.
 - **BaseTest** — `Wait` property creates a new `WebDriverWait` on every call; page objects should hold their own `_wait` field.
 - **Locator priority** — `data-testid` > `aria-*` attributes > CSS class > visible text.
 - **Headless** — `--headless` is commented out in `BaseTest.cs`; uncomment for CI.
